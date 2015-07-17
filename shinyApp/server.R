@@ -1,0 +1,53 @@
+# Markus Gesmann, February 2013
+require(googleVis)
+require(shiny)
+## Prepare data to be displayed
+## Load presidential election data by state from 1932 - 2012
+library(RCurl)
+#url <- "https://raw.githubusercontent.com/mages/diesunddas/master/Data/US%20Presidential%20Elections.csv"
+#dat <- getURL(url, ssl.verifypeer=0L, followlocation=1L)
+#dat <- read.csv(text=dat)
+data <- read.csv("GoalsEuroCup.csv", sep=";")
+## Add min and max values to the data
+dataminmax = data.frame(Country=rep(c("Min", "Max"),14),
+                       Year=sort(rep(seq(1960,2012,4),2)), 
+                       Goals=rep(c(0, 14),14),
+                       Winner=rep(NA,14),
+                       Runnerup=rep(NA,14))
+data<- rbind(data, dataminmax)
+
+shinyServer(function(input, output) {
+        myYear <- reactive({
+                input$Year
+        })
+        myWinner <- reactive({
+                myData <- subset(data, 
+                       (Year > (myYear()-1)) & (Year < (myYear()+1)) & !(Winner== ""))
+                myData[,4]
+        })
+        myRunnerup <- reactive({
+                myData <- subset(data, 
+                       (Year > (myYear()-1)) & (Year < (myYear()+1)) & !(Runnerup == ""))
+                myData[,5]
+        })
+        output$winner <- renderText({
+                paste("Winner : ", myWinner())
+        })
+        output$runnerup <- renderText({
+                paste("Runner-up : ", myRunnerup())
+        })
+        output$year <- renderText({
+                paste("Which Countries scored most Goals in the Euro Football Cup ", myYear())
+        })
+        output$gvis <- renderGvis({
+                myData <- subset(data, 
+                                 (Year > (myYear()-1)) & (Year < (myYear()+1)) & !is.na(Goals))
+                gvisGeoChart(myData,
+                             locationvar="Country", colorvar="Goals",
+                             options=list(region='150', displayMode="regions", 
+                                          resolution="countries",
+                                          width=500, height=400,
+                                          colorAxis="{colors:['#FFFFFF', '#0000FF']}"
+                             ))     
+        })
+})
