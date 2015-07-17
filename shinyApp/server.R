@@ -4,10 +4,11 @@ require(shiny)
 ## Prepare data to be displayed
 ## Load presidential election data by state from 1932 - 2012
 library(RCurl)
-#url <- "https://raw.githubusercontent.com/mages/diesunddas/master/Data/US%20Presidential%20Elections.csv"
-#dat <- getURL(url, ssl.verifypeer=0L, followlocation=1L)
-#dat <- read.csv(text=dat)
-data <- read.csv("GoalsEuroCup.csv", sep=";")
+url <- "https://raw.github.com/LennartH86/DataProductsProject/master/data/GoalsEuroCup.csv"
+data <- getURL(url, ssl.verifypeer=0L, followlocation=1L)
+# 
+data <- read.csv(text=data, sep=";")
+# data <- read.csv("data/GoalsEuroCup.csv", sep=";")
 ## Add min and max values to the data
 dataminmax = data.frame(Country=rep(c("Min", "Max"),14),
                        Year=sort(rep(seq(1960,2012,4),2)), 
