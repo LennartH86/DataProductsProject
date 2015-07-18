@@ -3,7 +3,7 @@ require(shiny)
 shinyUI(pageWithSidebar(
         headerPanel("Data Products Project: Who Got The Goals?"),
         sidebarPanel(
-                 sliderInput("Year", "Election year to be displayed:", 
+                 sliderInput("Year", "Year of the UEFA European Championship:", 
                              min=1960, max=2012, value=1960,  step=4,
                              sep="",animate=TRUE)
                 ),
@@ -18,7 +18,7 @@ shinyUI(pageWithSidebar(
                 div("Unfortunately this map does not support the countries withing Great Britain, therefore goals of the English football team are displayed as Great Britain and goals of Scotland can not be shown.",
                         style= "font-size: 10px; color:grey"),
                 br(),
-                div("Turkey did score 0 goals in 1996, 3 goals in 2000 and 8 goals in 2008. They can not be shown because Turkey is no part of Europe in this map.",
+                div("Turkey did score 0 goals in 1996, 3 goals in 2000 and 8 goals in 2008. They can not be shown, because Turkey is not a part of Europe in this map.",
                     style= "font-size: 10px; color:grey"),
                 br(),
                 br(),

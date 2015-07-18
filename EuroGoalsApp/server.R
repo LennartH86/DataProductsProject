@@ -38,7 +38,7 @@ shinyServer(function(input, output) {
                 paste("Runner-up : ", myRunnerup())
         })
         output$year <- renderText({
-                paste("Which Countries scored most Goals in the Euro Football Cup ", myYear())
+                paste("How much goals did the countries participating in the UEFA European Championship ", myYear(), "score?")
         })
         output$gvis <- renderGvis({
                 myData <- subset(data, 
