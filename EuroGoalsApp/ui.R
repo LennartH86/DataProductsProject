@@ -9,23 +9,30 @@ shinyUI(pageWithSidebar(
                 ),
 
         mainPanel(
-                h3(textOutput("year")), 
-                htmlOutput("gvis"),
-                p(textOutput("winner")),
-                p(textOutput("runnerup")),
-                br(),
-                br(),
-                div("Unfortunately this map does not support the countries withing Great Britain, therefore goals of the English football team are displayed as Great Britain and goals of Scotland can not be shown.",
-                        style= "font-size: 10px; color:grey"),
-                br(),
-                div("Turkey did score 0 goals in 1996, 3 goals in 2000 and 8 goals in 2008. They can not be shown, because Turkey is not a part of Europe in this map.",
-                    style= "font-size: 10px; color:grey"),
-                br(),
-                br(),
-                div("This Shiny App uses Google Vis to visualize data on a map. 
-                    The integration of Google Vis into Shiny is taken from mages' block, 
-                    please see: ", a("http://www.magesblog.com/2013/02/first-steps-of-using-googlevis-on-shiny.html"),
-                    style= "font-size: 10px; color:grey")
+                tabsetPanel(
+                        tabPanel("Visualization",
+                                h3(textOutput("year")), 
+                                htmlOutput("gvis"),
+                                p(textOutput("winner")),
+                                p(textOutput("runnerup"))
+                       
+                        ),
+                        tabPanel('Readme',
+                                 h5('This app shows all goals from the participants of the UEFA Euopean Championship in football, visualized on a map of Europe. To select the year of the Championship use the slider to the left. You can hover over the countries of Europe and see in a tooltip how my goals they scored. Furthermor, the winner and runner-up of each championship are presented.'),
+                                 br(),
+                                 div("Unfortunately this map does not support the countries within Great Britain, therefore goals of the English football team are displayed as Great Britain and goals of Scotland can not be shown."),
+                                 br(),
+                                 div("Turkey did score 0 goals in 1996, 3 goals in 2000 and 8 goals in 2008. They can not be shown, because Turkey is not a part of Europe in this map."),
+                                 br(),
+                                 br(),
+                                 div("This Shiny App uses Google Vis to visualize data on a map. 
+                                        The integration of Google Vis into Shiny is taken from mages' block, 
+                                        please see: ", a("http://www.magesblog.com/2013/02/first-steps-of-using-googlevis-on-shiny.html"))
+                        )
                 )
         )
+        
+ 
+        )
+        
 )
