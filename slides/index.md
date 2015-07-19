@@ -23,7 +23,7 @@ And how good did your team?
 
 If you want to know how much goals your team did score in any of the UEFA Europan Championships, this is what you get from Wikipedia!
 
-![width](wikipedia.png)
+![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
 
 But what if you want to compare your team to all the other teams participating in the tournament?
 
