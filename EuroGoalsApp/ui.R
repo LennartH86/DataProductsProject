@@ -25,6 +25,8 @@ shinyUI(pageWithSidebar(
                                  div("Turkey did score 0 goals in 1996, 3 goals in 2000 and 8 goals in 2008. They can not be shown, because Turkey is not a part of Europe in this map."),
                                  br(),
                                  br(),
+                                 div("The data is taken from Wikepedia and remodeled to fit the data requirements of Google Vis. Data reference: ", a("https://en.wikipedia.org/wiki/List_of_UEFA_European_Championship_goalscorers")),
+                                 br(),
                                  div("This Shiny App uses Google Vis to visualize data on a map. 
                                         The integration of Google Vis into Shiny is taken from mages' block, 
                                         please see: ", a("http://www.magesblog.com/2013/02/first-steps-of-using-googlevis-on-shiny.html"))
