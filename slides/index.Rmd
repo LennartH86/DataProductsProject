@@ -17,9 +17,16 @@ And how good did your team?
 
 ```{r setOptions, echo=FALSE}
 options(gvis.plot.tag="chart")
+<<<<<<< HEAD
+
+```
+
+```{r, echo=FALSE, results='asis'}
+=======
 ```
 
 ```{r, echo=FALSE}
+>>>>>>> master
 require(googleVis)
 library(RCurl)
 url <- "https://raw.github.com/LennartH86/DataProductsProject/master/data/GoalsEuroCup.csv"
@@ -71,6 +78,19 @@ third <- highscorer[order(-highscorer$Goals),][3,]
 
 ---
 
+<<<<<<< HEAD
+## But what if you want to see the goals scored for each Championship?
+
+If you want to know how much goals your team did score in any of the UEFA European Championships, this is what you get from Wikipedia!
+
+![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
+
+But what if you want to compare your team to all the other teams participating in the tournament?
+
+--- 
+
+## Then you need this app!
+=======
 ## Why do you need this app?
 
 General information are awesome! But what if you want to know how much goals each team scored in a specific Championship? This is what you get from Wikipedia!
@@ -82,11 +102,16 @@ Not really what we want right?
 --- 
 
 ## This is why you need this app!
+>>>>>>> master
 
 Becaue you want to see all the data! For example from the UEFA European Championships 2012.
 
 ```{r, echo=FALSE, results='asis'}
+<<<<<<< HEAD
+plot(g) 
+=======
 plot(g, tag = 'chart') 
+>>>>>>> master
 ```
 
 ---
