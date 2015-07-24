@@ -52,11 +52,11 @@ third <- highscorer[order(-highscorer$Goals),][3,]
 
 ## Why do you need this app?
 
-General information are awesome! But what if you want to know how much goals each time scored in a specific Championship? This is what you get from Wikipedia!
+General information are awesome! But what if you want to know how much goals each team scored in a specific Championship? This is what you get from Wikipedia!
 
 ![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
 
-Not realy what we want right?
+Not really what we want right?
 
 --- 
 
