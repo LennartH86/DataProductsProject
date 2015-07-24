@@ -44,36 +44,53 @@ winner <- highscorer[order(-highscorer$Goals),][1,]
 runnerup <- highscorer[order(-highscorer$Goals),][2,]
 third <- highscorer[order(-highscorer$Goals),][3,]
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 1. Germany  - 65
 2. Netherlands  - 57
 3. Spain  - 50
 
 ---
 
+<<<<<<< HEAD
 ## But what if you want to see the goals scored for each Championship?
 
 If you want to know how much goals your team did score in any of the UEFA European Championships, this is what you get from Wikipedia!
+=======
+## Why do you need this app?
+
+General information are awesome! But what if you want to know how much goals each team scored in a specific Championship? This is what you get from Wikipedia!
+>>>>>>> master
 
 ![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
 
-But what if you want to compare your team to all the other teams participating in the tournament?
+Not really what we want right?
 
 --- 
 
-## Then you need this app!
+## This is why you need this app!
 
 Becaue you want to see all the data! For example from the UEFA European Championships 2012.
 
 <!-- GeoChart generated in R 3.2.1 by googleVis 0.5.9 package -->
+<<<<<<< HEAD
 <!-- Fri Jul 24 17:21:21 2015 -->
+=======
+<!-- Fri Jul 24 23:08:48 2015 -->
+>>>>>>> master
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
+<<<<<<< HEAD
 function gvisDataGeoChartID137c480e441b () {
+=======
+function gvisDataGeoChartID210c69e72725 () {
+>>>>>>> master
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -729,8 +746,13 @@ return(data);
 }
  
 // jsDrawChart
+<<<<<<< HEAD
 function drawChartGeoChartID137c480e441b() {
 var data = gvisDataGeoChartID137c480e441b();
+=======
+function drawChartGeoChartID210c69e72725() {
+var data = gvisDataGeoChartID210c69e72725();
+>>>>>>> master
 var options = {};
 options["width"] =    500;
 options["height"] =    400;
@@ -742,7 +764,11 @@ options["magnifyingGlass"] = {enable: true, zoomFactor: 40};
 options["datalessRegionColor"] = "white";
 
     var chart = new google.visualization.GeoChart(
+<<<<<<< HEAD
     document.getElementById('GeoChartID137c480e441b')
+=======
+    document.getElementById('GeoChartID210c69e72725')
+>>>>>>> master
     );
     chart.draw(data,options);
     
@@ -766,9 +792,15 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
+<<<<<<< HEAD
 callbacks.push(drawChartGeoChartID137c480e441b);
 })();
 function displayChartGeoChartID137c480e441b() {
+=======
+callbacks.push(drawChartGeoChartID210c69e72725);
+})();
+function displayChartGeoChartID210c69e72725() {
+>>>>>>> master
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -792,11 +824,19 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
+<<<<<<< HEAD
 <script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID137c480e441b"></script>
  
 <!-- divChart -->
   
 <div id="GeoChartID137c480e441b" 
+=======
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID210c69e72725"></script>
+ 
+<!-- divChart -->
+  
+<div id="GeoChartID210c69e72725" 
+>>>>>>> master
   style="width: 500; height: 400;">
 </div>
 
