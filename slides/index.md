@@ -21,7 +21,7 @@ And how good did your team?
 
 --- .class #id 
 
-## Here are some general information about the UEFA Euopean Championships!
+## Here are some general information about the UEFA European Championships!
 
 
 ```r
@@ -52,15 +52,15 @@ third <- highscorer[order(-highscorer$Goals),][3,]
 
 ## Why do you need this app?
 
-If you want to know how much goals your team did score in any of the UEFA European Championships, this is what you get from Wikipedia!
+General information are awesome! But what if you want to know how much goals each time scored in a specific Championship? This is what you get from Wikipedia!
 
 ![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
 
-But what if you want to compare your team to all the other teams participating in the tournament?
+Not realy what we want right?
 
 --- 
 
-## Then you need this app!
+## This is why you need this app!
 
 Becaue you want to see all the data! For example from the UEFA European Championships 2012.
 
