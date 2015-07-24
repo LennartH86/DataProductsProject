@@ -17,11 +17,43 @@ And how good did your team?
 
 
 
+
+
 --- .class #id 
 
-## Why do you need this app?
+## Here are some general information about the UEFA European Championships!
 
-If you want to know how much goals your team did score in any of the UEFA Europan Championships, this is what you get from Wikipedia!
+
+```r
+# Data of which UEFA European Championships are included?
+unique(data$Year)
+```
+
+```
+##  [1] 1960 1964 1968 1972 1976 1980 1984 1988 1992 1996 2000 2004 2008 2012
+```
+
+
+
+
+
+```r
+# Which country is the all-time highscorer?
+highscorer <- aggregate(Goals ~ Country, data= data, FUN= sum)
+winner <- highscorer[order(-highscorer$Goals),][1,]
+runnerup <- highscorer[order(-highscorer$Goals),][2,]
+third <- highscorer[order(-highscorer$Goals),][3,]
+```
+
+1. Germany  - 65
+2. Netherlands  - 57
+3. Spain  - 50
+
+---
+
+## But what if you want to see the goals scored for each Championship?
+
+If you want to know how much goals your team did score in any of the UEFA European Championships, this is what you get from Wikipedia!
 
 ![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
 
@@ -34,14 +66,14 @@ But what if you want to compare your team to all the other teams participating i
 Becaue you want to see all the data! For example from the UEFA European Championships 2012.
 
 <!-- GeoChart generated in R 3.2.1 by googleVis 0.5.9 package -->
-<!-- Sun Jul 19 22:02:50 2015 -->
+<!-- Fri Jul 24 17:21:21 2015 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataGeoChartID748ef961de () {
+function gvisDataGeoChartID137c480e441b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -697,8 +729,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartGeoChartID748ef961de() {
-var data = gvisDataGeoChartID748ef961de();
+function drawChartGeoChartID137c480e441b() {
+var data = gvisDataGeoChartID137c480e441b();
 var options = {};
 options["width"] =    500;
 options["height"] =    400;
@@ -710,7 +742,7 @@ options["magnifyingGlass"] = {enable: true, zoomFactor: 40};
 options["datalessRegionColor"] = "white";
 
     var chart = new google.visualization.GeoChart(
-    document.getElementById('GeoChartID748ef961de')
+    document.getElementById('GeoChartID137c480e441b')
     );
     chart.draw(data,options);
     
@@ -734,9 +766,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartGeoChartID748ef961de);
+callbacks.push(drawChartGeoChartID137c480e441b);
 })();
-function displayChartGeoChartID748ef961de() {
+function displayChartGeoChartID137c480e441b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -760,11 +792,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID748ef961de"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID137c480e441b"></script>
  
 <!-- divChart -->
   
-<div id="GeoChartID748ef961de" 
+<div id="GeoChartID137c480e441b" 
   style="width: 500; height: 400;">
 </div>
 
@@ -774,33 +806,5 @@ Well you need the full app to see the goals of more than one year though!
 
 Get it here: https://lennarth86.shinyapps.io/EuroGoalsApp
 
---- 
 
-## Here some information about the UEFA Euopean Chamiionships!
-
-
-```r
-# Data of which UEFA European Championships are included?
-unique(data$Year)
-```
-
-```
-##  [1] 1960 1964 1968 1972 1976 1980 1984 1988 1992 1996 2000 2004 2008 2012
-```
-
-
-
-
-
-```r
-# Which country is the all-time highscorer?
-highscorer <- aggregate(Goals ~ Country, data= data, FUN= sum)
-winner <- highscorer[order(-highscorer$Goals),][1,]
-runnerup <- highscorer[order(-highscorer$Goals),][2,]
-third <- highscorer[order(-highscorer$Goals),][3,]
-```
-
-1. Germany  - 65
-2. Netherlands  - 57
-3. Spain  - 50
 
