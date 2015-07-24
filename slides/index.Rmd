@@ -19,23 +19,7 @@ And how good did your team?
 options(gvis.plot.tag="chart")
 ```
 
---- .class #id 
-
-## Why do you need this app?
-
-If you want to know how much goals your team did score in any of the UEFA Europan Championships, this is what you get from Wikipedia!
-
-![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
-
-But what if you want to compare your team to all the other teams participating in the tournament?
-
---- 
-
-## Then you need this app!
-
-Becaue you want to see all the data! For example from the UEFA European Championships 2012.
-
-```{r, echo=FALSE, results='asis'}
+```{r, echo=FALSE}
 require(googleVis)
 library(RCurl)
 url <- "https://raw.github.com/LennartH86/DataProductsProject/master/data/GoalsEuroCup.csv"
@@ -47,9 +31,9 @@ dataminmax = data.frame(Country=rep(c("Min", "Max"),14),
                        Goals=rep(c(0, 14),14),
                        Winner=rep(NA,14),
                        Runnerup=rep(NA,14))
-data<- rbind(data, dataminmax)
+data1<- rbind(data, dataminmax)
 
-myData <- subset(data, (2012 > (2012-1)) & (2012 < (2012+1)) & !is.na(Goals))
+myData <- subset(data1, (2012 > (2012-1)) & (2012 < (2012+1)) & !is.na(Goals))
 
 g <- gvisGeoChart(myData, locationvar="Country", colorvar="Goals",
                 options=list(region='150', displayMode="regions", 
@@ -57,19 +41,11 @@ g <- gvisGeoChart(myData, locationvar="Country", colorvar="Goals",
                 colorAxis="{colors:['#FFFFFF', '#0000FF']}",
                 magnifyingGlass="{enable: true, zoomFactor: 40}",
                 datalessRegionColor="white"))
-
-plot(g) 
 ```
 
----
+--- .class #id 
 
-Well you need the full app to see the goals of more than one year though!
-
-Get it here: https://lennarth86.shinyapps.io/EuroGoalsApp
-
---- 
-
-## Here some information about the UEFA Euopean Chamiionships!
+## Here are some general information about the UEFA Euopean Championships!
 
 ```{r}
 # Data of which UEFA European Championships are included?
@@ -82,15 +58,42 @@ aggregate(Goals ~ Year, data= data, FUN= sum)
 ```
 
 
-```{r, eval=FALSE}
+```{r}
 # Which country is the all-time highscorer?
 highscorer <- aggregate(Goals ~ Country, data= data, FUN= sum)
 winner <- highscorer[order(-highscorer$Goals),][1,]
 runnerup <- highscorer[order(-highscorer$Goals),][2,]
 third <- highscorer[order(-highscorer$Goals),][3,]
 ```
-
 1. `r winner[1]`  - `r winner[2]`
 2. `r runnerup[1]`  - `r runnerup[2]`
 3. `r third[1]`  - `r third[2]`
+
+---
+
+## Why do you need this app?
+
+If you want to know how much goals your team did score in any of the UEFA European Championships, this is what you get from Wikipedia!
+
+![width](https://raw.githubusercontent.com/LennartH86/DataProductsProject/master/slides/wikipedia.PNG)
+
+But what if you want to compare your team to all the other teams participating in the tournament?
+
+--- 
+
+## Then you need this app!
+
+Becaue you want to see all the data! For example from the UEFA European Championships 2012.
+
+```{r, echo=FALSE, results='asis'}
+plot(g, tag = 'chart') 
+```
+
+---
+
+Well you need the full app to see the goals of more than one year though!
+
+Get it here: https://lennarth86.shinyapps.io/EuroGoalsApp
+
+
 
